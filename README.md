@@ -1,0 +1,2 @@
+# docker-odoo
+Dockerize Odoo
