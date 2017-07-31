@@ -1,6 +1,6 @@
 PRIVATE_REGISTRY_URL=ro.lan:5000
 
-DOCKER_IMAGE=onfta/odoo
+DOCKER_IMAGE=cuongtransc/odoo
 VERSION=10
 
 all: build
@@ -16,4 +16,3 @@ build-for-private-registry:
 
 push-for-private-registry:
 	docker push ${PRIVATE_REGISTRY_URL}/${DOCKER_IMAGE}:${VERSION}
-

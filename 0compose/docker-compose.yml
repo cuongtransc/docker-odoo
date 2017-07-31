@@ -1,7 +1,7 @@
 #
 # Source code address
 # Github: https://github.com/OnFTA/docker-odoo
-# DockerHub: https://hub.docker.com/u/tranhuucuong91/
+# DockerHub: https://hub.docker.com/u/cuongtransc/
 #
 # Syntax: https://docs.docker.com/compose/yml/
 # References: https://github.com/odoo/docker
@@ -31,9 +31,14 @@ services:
         #restart: always
         # stdin_open: true
         # tty: true
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "100M"
+                max-file: "3"
 
     odoo:
-        image: onfta/odoo:10
+        image: cuongtransc/odoo:10
         environment:
             - DB_PORT_5432_TCP_ADDR=postgres
             - DB_PORT_5432_TCP_PORT=5432
@@ -62,6 +67,11 @@ services:
         #restart: always
         # stdin_open: true
         tty: true
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "100M"
+                max-file: "3"
 
 networks:
     back:
